@@ -1,0 +1,68 @@
+<!-- <div class="container mt-5">
+    <div class="card text-center" style="padding: 20px; color: red;">
+        <h1>You are User</h1>
+        <h1>{{message}}</h1>
+    </div>
+</div> -->
+
+<div *ngIf="!invalidUser">
+    <div class="container ">
+
+        <form (ngSubmit)="serchLoan()">
+            <h2 class="card-heading ">Loan Search</h2>
+            <div class="row ">
+                <div class="col-md-4">
+                    <div class="form-group"><label for="text" class="sr-only">loanNo</label>
+                        <input type="text" [(ngModel)]="loanNo" [ngModelOptions]="{standalone: true}" class="form-control" id="loanNo" placeholder="Loan No">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group"><label for="text" class="sr-only">firstName </label>
+                        <input type="text" [(ngModel)]="fName" [ngModelOptions]="{standalone: true}" class="form-control" id="firstName" placeholder="First Name">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group"><label for="text" class="sr-only">lastName</label>
+                        <input type="text" [(ngModel)]="lName" [ngModelOptions]="{standalone: true}" class="form-control" id="lastName" placeholder="Last Name">
+                    </div>
+                </div>
+            </div>
+            <div class="row  mx-3">
+                <div class="col-md-2">
+                    <div class="form-group"><button type="submit" class="btn btn-primary mb-2">Search</button></div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group"><button type="reset" class="btn btn-primary mb-2">Clear</button></div>
+                </div>
+            </div>
+        </form>
+
+        <div class="search-results" *ngIf="matching_loans && isAvlbLoan">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Loan No</th>
+                        <th>Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let loan of matching_loans">
+                        <td>{{loan.loanNo}}</td>
+                        <td>{{loan.fname + ' ' + loan.lname}}</td>
+                        <td>
+                            <button (click)="viewLoanDetails(loan)" class="btn btn-default">View</button>
+                            <button *ngIf="userType" (click)="modifyLoanDetails(loan)" class="btn btn-default">Modify</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- <div style="color: red;" *ngIf="!x">
+            Wrong Data
+        </div> -->
+    </div>
+</div>
+
+
+<!------ Include the above in your HEAD tag ---------->

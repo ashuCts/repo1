@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <div class="card" style="padding: 20px;">
+        <h2 class="card-heading">Enter Details</h2>
+        <form (ngSubmit)="saveUser()">
+            <label for="userName" disabled="true" class="sr-only">User Name</label>
+            <input type="text" [(ngModel)]="userName" [ngModelOptions]="{standalone: true}" class="form-control mb-3" id="loanNo" placeholder="User Name">
+
+            <label for="userFirstName" class="sr-only">First Name</label>
+            <input type="text" [(ngModel)]="userFirstName" [ngModelOptions]="{standalone: true}" class="form-control mb-3" id="userFirstName" placeholder="First Name">
+
+            <label for="userPassword" class="sr-only">Last Name</label>
+            <input type="text" [(ngModel)]="userLastName" [ngModelOptions]="{standalone: true}" class="form-control mb-3" id="userLastName" placeholder="Last Name">
+
+            <label for="userPassword" class="sr-only">Password</label>
+            <input type="text" [(ngModel)]="userPassword" [ngModelOptions]="{standalone: true}" class="form-control mb-3" id="userPassword" placeholder="Password">
+
+
+            <button type="submit" class="btn btn-default mb-2">Register</button>
+
+            <button type="button" class="btn btn-default mb-2" (click)="clearFields()">Clear</button>
+
+            <button type="button" class="btn btn-default mb-2" (click)="homeNavigate()">Back</button>
+        </form>
+    </div>
+</div>

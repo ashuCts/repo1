@@ -1,0 +1,66 @@
+<div class="container ">
+    <h2 class="card-heading">Loan Details</h2>
+    <form (ngSubmit)="saveOrUpdateLoan()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"><label for="loanNo" disabled="true" class="sr-only">LoanNo</label>
+                    <input type="text" [(ngModel)]="loanNo" [ngModelOptions]="{standalone: true}" [disabled]="loanNodisable" class="form-control" id="loanNo" placeholder="Loan No"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"><label for="firstName" class="sr-only">FirstName</label>
+                    <input type="text" [(ngModel)]="fname" [ngModelOptions]="{standalone: true}" [disabled]="disableInput" class="form-control" id="firstName" placeholder="First Name"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"><label for="lastName" class="sr-only">LastName</label>
+                    <input type="text" [(ngModel)]="lname" [ngModelOptions]="{standalone: true}" [disabled]="disableInput" class="form-control" id="lastName" placeholder="Last Name"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"><label for="propertyAddress" class="sr-only">PropertyAddress</label>
+                    <input type="text" [(ngModel)]="propertyAddress" [ngModelOptions]="{standalone: true}" [disabled]="disableInput" class="form-control" id="propertyAddress" placeholder="Property Address"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"><label for="loanAmount" class="sr-only">LoanAmount</label>
+                    <input type="text" [(ngModel)]="loanAmount" [ngModelOptions]="{standalone: true}" [disabled]="disableInput" class="form-control" id="loanAmount" placeholder="Loan Amount"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"><label for="loantype" class="sr-only">LoanType</label>
+                    <input type="text" [(ngModel)]="loantype" [ngModelOptions]="{standalone: true}" [disabled]="disableInput" class="form-control" id="loantype" placeholder="Loan Type"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"><label for="loanterm" class="sr-only">LoanTerm</label>
+                    <input type="text" [(ngModel)]="lnTerm" [ngModelOptions]="{standalone: true}" [disabled]="disableInput" class="form-control" id="loanterm" placeholder="Loan Term"></div>
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-md-1">
+                <div class="form-group" *ngIf="modify">
+                    <button type="submit" class="btn btn-primary mb-2">Save</button>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="form-group" *ngIf="modify">
+                    <button type="button" class="btn btn-primary mb-2" (click)="clearFields()">Clear</button></div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group"><button type="button" class="btn btn-primary mb-2" (click)="homeNavigate()">Home</button></div>
+            </div>
+        </div>
+
+        <div style="color: red;" *ngIf="fnMeassge">
+            {{fnMeassge}}
+        </div>
+    </form>
+</div>
